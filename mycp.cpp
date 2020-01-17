@@ -1,5 +1,17 @@
+#include <fstream>
+#include <iostream>
+
+using namespace std; 
+
 int main(int argc, char const *argv[])
 {
+	if (argc == 2) {
+	cerr << "Need 2 files" << endl;
+	return 1;
+	}
+	string in = argv[1]; 
+    string out = argv[2];
+	
  	ifstream fin;
  	ofstream fout;
 	
@@ -9,7 +21,7 @@ int main(int argc, char const *argv[])
 	// open the first file
  	
 	char c;
-
+    fin.open(in);
  	if (fin.fail()) // check if it is successful 
  	{
  		cerr << " Cannot open the input file!" << endl;
@@ -18,7 +30,7 @@ int main(int argc, char const *argv[])
  	
 
 	// open the second file
-	
+    fout.open(out);
  	if (fout.fail())
  	{
  		cerr << " Cannot open the output file!" << endl;
