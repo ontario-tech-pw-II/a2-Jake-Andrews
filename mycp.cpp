@@ -5,7 +5,7 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-	if (argc == 2) {
+	if (argc != 3) {
 	cerr << "Need 2 files" << endl;
 	return 1;
 	}
